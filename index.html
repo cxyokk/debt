@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+	<meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>debt</title>
+
+  <link rel="stylesheet" href="stylesheets/normalize.css" />
+  <link rel="stylesheet" href="stylesheets/app.css" />
+
+  <script src="javascripts/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+  <div class="row">
+    <div class="large-12 columns">
+
+      <header>
+        <h1>debt</h1>
+        <hr />
+      </header>
+
+      <section ng-controller="DebtGraphCtrl">
+        <div class="row">
+          <div class="large-10 columns">
+            <ul class="button-group" id="debtGroup">
+              <li><a href="#" class="small secondary button"
+                     ng-class="{active:debtGroup=='all'}" ng-click="debtGroup='all'">全部</a></li>
+              <li><a href="#" class="small secondary button"
+                     ng-class="{active:debtGroup=='status'}" ng-click="debtGroup='status'">还款情况</a></li>
+              <li><a href="#" class="small secondary button"
+                     ng-class="{active:debtGroup=='college'}" ng-click="debtGroup='college'">学校分布</a></li>
+              <li><a href="#" class="small secondary button"
+                     ng-class="{active:debtGroup=='hometown'}" ng-click="debtGroup='hometown'">地域分布</a></li>
+              <li><a href="#" class="small secondary button"
+                     ng-class="{active:debtGroup=='greatness'}" ng-click="debtGroup='greatness'">伟大程度</a></li>
+            </ul>
+          </div>
+          <div class="large-2 columns">
+            <a href="#" class="small round success button right" data-reveal-id="debt-contract">借款合同</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="panel">
+              <a href="#" class="expand round success button" ng-hide="debtGroup">Loading...</a>
+              <div id="debt-graph"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <hr />
+        <div class="row">
+          <div class="large-5 columns">
+            <p>© Copyright no one at all. Yay.</p>
+          </div>
+          <div class="large-7 columns">
+            <h6 class="subheader right">滴水之恩，涌泉相报。嗷嗷嗷。</h6>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <div id="debt-contract" class="reveal-modal">
+    <h2>借款合同</h2>
+    <p class="lead">debt: [det] n. 债务；借款；罪过。</p>
+    <p>我还欠学校￥6400的学费，钱不够，要找你们借钱。</p>
+    <p>
+      1.预计两个月内还钱。<br/>
+      2.不计利息，等我有钱了请你们吃饭。<br/>
+      3.本合同不具备任何法律效力。
+    </p>
+    <p>谢谢。<br/>(2013.6.18)</p>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+  <script>
+  document.write('<script src=' +
+  ('__proto__' in {} ? 'javascripts/vendor/zepto' : 'javascripts/vendor/jquery') +
+  '.js><\/script>')
+  </script>
+  
+  <script src="javascripts/foundation/foundation.js"></script>
+	<script src="javascripts/foundation/foundation.cookie.js"></script>
+	<script src="javascripts/foundation/foundation.topbar.js"></script>
+	<script src="javascripts/foundation/foundation.reveal.js"></script>
+	<script src="javascripts/foundation/foundation.placeholder.js"></script>
+	<script src="javascripts/foundation/foundation.alerts.js"></script>
+	<script src="javascripts/foundation/foundation.section.js"></script>
+	<script src="javascripts/foundation/foundation.forms.js"></script>
+	<script src="javascripts/foundation/foundation.clearing.js"></script>
+	<script src="javascripts/foundation/foundation.tooltips.js"></script>
+	<script src="javascripts/foundation/foundation.magellan.js"></script>
+	<script src="javascripts/foundation/foundation.joyride.js"></script>
+	<script src="javascripts/foundation/foundation.dropdown.js"></script>
+	<script src="javascripts/foundation/foundation.orbit.js"></script>
+
+	<script src="javascripts/vendor/d3.v3.min.js"></script>
+	<script src="javascripts/vendor/angular.1.0.7.min.js"></script>
+	<script src="javascripts/vendor/angular-ui-utils.min.js"></script>
+	<script src="javascripts/vendor/lodash.min.js"></script>
+
+  <!--
+	<script src="javascripts/vendor/coffee-script.js"></script>
+	<script src="javascripts/app/names.coffee" type="text/coffeescript"></script>
+	<script src="javascripts/app/lenders.coffee" type="text/coffeescript"></script>
+	<script src="javascripts/app/graph.coffee" type="text/coffeescript"></script>
+	<script src="javascripts/app/app.coffee" type="text/coffeescript"></script>
+  -->
+	<script src="javascripts/app.js/names.js?v=1.0"></script>
+	<script src="javascripts/app.js/lenders.js?v=1.7"></script>
+	<script src="javascripts/app.js/graph.js?v=1.0"></script>
+	<script src="javascripts/app.js/app.js?v=1.0"></script>
+
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
