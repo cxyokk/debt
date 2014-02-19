@@ -51,7 +51,6 @@ class DebtGraph
         <strong>#{d.name}</strong>
         <hr style="margin:0.3em 0.05em" />
         ￥#{d.amount} <br/>
-        @#{names.college[d.college]} <br/>
         from #{names.hometown[d.hometown]} <br/>
         """
 
@@ -70,9 +69,12 @@ class DebtGraph
       .duration(800)
       .style('opacity', 0)
       .remove()
-    @['show_'+group]()
+    switch group
+      when 'all' then @showAll()
+      when 'status' then @showStatus()
+      else @showBy(group)
 
-  show_all: ->
+  showAll: ->
     @force?.stop()
     @force = d3.layout.force()
       .gravity(0.08)
@@ -84,7 +86,7 @@ class DebtGraph
         @gs.attr('transform', (d)->"translate(#{d.x},#{d.y})")
       .start()
 
-  show_status: ->
+  showStatus: ->
     groupFn = (lender)->
       if lender.returned
         'returned'
@@ -96,22 +98,10 @@ class DebtGraph
     names = window.debtApp.names.status
     @groupBy groups, names, groupFn
 
-  show_college: ->
-    groupFn = (lender)->lender.college
-    names = window.debtApp.names.college
-    groups = Object.keys(names)
-    @groupBy groups, names, groupFn
-
-  show_hometown: ->
-    groupFn = (lender)->lender.hometown
-    names = window.debtApp.names.hometown
-    groups = Object.keys(names)
-    @groupBy groups, names, groupFn
-
-  show_greatness: ->
-    groupFn = (lender)->lender.greatness
-    names = window.debtApp.names.greatness
-    groups = Object.keys(names)
+  showBy: (key)->
+    groupFn = (lender)->lender[key]
+    names = window.debtApp.names[key]
+    groups = _.uniq(i[key] for i in @lenders)
     @groupBy groups, names, groupFn
 
   groupBy: (groups, names, groupFn, maxCol = 4)->
