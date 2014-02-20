@@ -2,7 +2,7 @@ lenders = [
   {
     name: 'alber'
     amount: 10000
-    paid: false
+    paid: true
     returned: false
     hometown: 'gd'
     hobby: 'sorry'
@@ -29,7 +29,7 @@ lenders = [
   {
     name: 'slim'
     amount: 1500
-    paid: false
+    paid: true
     returned: false
     hometown: 'cq'
     hobby: 'pes'
