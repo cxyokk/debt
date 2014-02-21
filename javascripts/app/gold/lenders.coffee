@@ -11,7 +11,7 @@ lenders = [
   {
     name: 'gold'
     amount: 5000
-    paid: false
+    paid: true
     returned: false
     hometown: 'hb'
     hobby: 'foosball'
