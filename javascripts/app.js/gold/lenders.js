@@ -6,7 +6,7 @@
     {
       name: 'alber',
       amount: 10000,
-      paid: false,
+      paid: true,
       returned: false,
       hometown: 'gd',
       hobby: 'sorry',
@@ -22,7 +22,7 @@
     }, {
       name: 'fly',
       amount: 3000,
-      paid: false,
+      paid: true,
       returned: false,
       hometown: 'sx',
       hobby: 'foosball',
@@ -30,7 +30,7 @@
     }, {
       name: 'slim',
       amount: 1500,
-      paid: false,
+      paid: true,
       returned: false,
       hometown: 'cq',
       hobby: 'pes',

@@ -20,7 +20,7 @@ lenders = [
   {
     name: 'fly'
     amount: 3000
-    paid: false
+    paid: true
     returned: false
     hometown: 'sx'
     hobby: 'foosball'
