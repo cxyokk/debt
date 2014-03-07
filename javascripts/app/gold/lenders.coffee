@@ -12,7 +12,7 @@ lenders = [
     name: 'gold'
     amount: 5000
     paid: true
-    returned: false
+    returned: true
     hometown: 'hb'
     hobby: 'foosball'
     greatness: 'gold'
@@ -21,7 +21,7 @@ lenders = [
     name: 'fly'
     amount: 3000
     paid: true
-    returned: false
+    returned: true
     hometown: 'sx'
     hobby: 'foosball'
     greatness: 'fly'
@@ -30,7 +30,7 @@ lenders = [
     name: 'slim'
     amount: 1500
     paid: true
-    returned: false
+    returned: true
     hometown: 'cq'
     hobby: 'pes'
     greatness: 'soccer'
