@@ -3,7 +3,7 @@ lenders = [
     name: 'alber'
     amount: 10000
     paid: true
-    returned: false
+    returned: true
     hometown: 'gd'
     hobby: 'sorry'
     greatness: 'great'
